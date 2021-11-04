@@ -11,9 +11,11 @@ import { ExercisesModule } from './exercises/exercises.module';
     SharedModule,
     MongooseModule.forRootAsync({
       imports: [ConfigService],
-      useFactory: async (configService: ConfigService) => ({
-        uri: configService.get('MONGO_CONNECTION'),
-      }),
+      useFactory: async (configService: ConfigService) => {
+        return {
+          uri: configService.get('MONGO_CONNECTION'),
+        };
+      },
       inject: [ConfigService],
     }),
     ExercisesModule,

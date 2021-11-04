@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose, { Document } from 'mongoose';
+import * as mongoose from 'mongoose';
+import { Document } from 'mongoose';
 
 export type ExerciseDocument = Exercise & Document;
 
